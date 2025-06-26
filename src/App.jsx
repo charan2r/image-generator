@@ -45,7 +45,7 @@ function App() {
       <h1 className="text-3xl font-bold mb-20">AI Image Generator</h1>
       <input
         type="text"
-        placeholder="Describe what you want to generate"
+        placeholder="Describe what you want to generate here..."
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
         className="border border-gray-400 p-2 rounded-md w-96 mb-4"
