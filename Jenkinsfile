@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/charan2r/image-generator.git'
+                git 'https://github.com/charan2r/image-generator.git', branch: 'main'
             }
         }
 
