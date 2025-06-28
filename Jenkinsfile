@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         S3_BUCKET = 'imagegen'
-        AWS_REGION = 'us-north-1'
+        AWS_REGION = 'eu-north-1'
     }
 
     stages {
@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy to S3') {
             steps {
                 bat """
-                    aws s3 sync build/ s3://${S3_BUCKET}/ --region ${AWS_REGION} --delete
+                    aws s3 sync dist/ s3://${S3_BUCKET}/ --region ${AWS_REGION} --delete
                     aws s3 website s3://${S3_BUCKET}/ --index-document index.html --error-document error.html
                 """
             }
